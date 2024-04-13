@@ -483,3 +483,5 @@ $(function () {
 setTimeout(function(){
     $('messages').fadeOut('slow');
 }, 4000)
+
+console.log("Sanity check!");

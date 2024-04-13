@@ -4,6 +4,7 @@ from django.core.mail import send_mail
 from django.shortcuts import render, redirect
 from pages.models import Team
 from cars.models import Car
+from appointments.models import Booking
 
 
 
@@ -61,3 +62,33 @@ def contact(request):
         return redirect('contact')
 
     return render(request, 'pages/contact.html')
+
+def booking(request):
+    if request.method == 'POST':
+        your_name = request.POST['your-name']
+        your_phone = request.POST['your-phone']
+        your_email = request.POST['your-email']
+        your_schedule = request.POST['your-schedule']
+        your_day = request.POST['your-day']
+        your_message = request.POST['your-message']
+        car_name = request.POST['car-name']
+        car_number = request.POST['car-number']
+        subject = request.POST['subject']
+
+        email_subject = 'You have a new Booking from Motor Magic website regarding ' + subject + '.'
+        message_body = ('Name: ' + your_name + '. Email: ' + your_email + ' Phone: ' + your_phone + '. Message: '
+                        + your_message + '. Schedule: ' + your_schedule + '. Day: ' + your_day + '. Car Id: ' + car_number + '. Car Name: ' + car_name +'.')
+
+        admin_info = User.objects.get(is_superuser=True)
+        admin_email = admin_info.email
+        send_mail(
+            email_subject,
+            message_body,
+            "marjolmata29@gmail.com",
+            [admin_email],
+            fail_silently=False,
+        )
+        messages.success(request, 'Thank you for contacting us. We will get back to you shortly.')
+        return redirect('booking')
+
+    return render(request, 'pages/booking.html')

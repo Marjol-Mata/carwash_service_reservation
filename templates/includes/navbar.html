@@ -31,7 +31,7 @@
                         class="nav-link"
                         {% endif %}
                         href="{% url 'cars' %}">
-                            Cars
+                        Cars
                         </a>
                     </li>
                     <li class="nav-item">
@@ -69,6 +69,17 @@
                         {% endif %}
                         href="{% url 'contact' %}">
                         Contact
+                        </a>
+                    </li>
+                    <li class="nav-item dropdown">
+                        <a
+                                {% if 'booking' in request.path %}
+                        class = "nav-link active"
+                        {% else %}
+                        class="nav-link"
+                        {% endif %}
+                        href="{% url 'booking' %}">
+                        BOOKING NOW
                         </a>
                     </li>
                     <li class="nav-item dropdown m-hide">

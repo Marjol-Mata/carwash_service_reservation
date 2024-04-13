@@ -1,0 +1,167 @@
+{% extends 'base.html' %}
+
+{% block title %} | Booking {% endblock %}
+{% block content %}
+{% load static %}
+
+<!-- Sub banner start -->
+<div class="sub-banner overview-bgi">
+    <div class="container breadcrumb-area">
+        <div class="breadcrumb-areas">
+            <h1>Contact Us</h1>
+            <ul class="breadcrumbs">
+                <li><a href="{% url 'home' %}">Home</a></li>
+                <li class="active">Book for your Car</li>
+            </ul>
+        </div>
+    </div>
+</div>
+<!-- Sub Banner end -->
+
+<!-- Contact 2 start -->
+<div class="contact-2 content-area-5">
+    <div class="container">
+        <!-- Main title -->
+        <div class="main-title text-center">
+            <h1>Book <span>Now</span></h1>
+            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod</p>
+        </div>
+        <form action="{% url 'booking' %}" method="POST" enctype="multipart/form-data">
+            {% include 'includes/messages.html' %}
+            {% csrf_token %}
+            <div class="row">
+                <div class="col-lg-7">
+                    <div class="row">
+                        <div class="col-md-6 text-left">
+                            <div class="form-group name">
+                                <input type="text" name="your-name" class="form-control" placeholder="Your Name" required>
+                            </div>
+                        </div>
+                        <div class="col-md-6">
+                            <div class="form-group email">
+                                <input type="email" name="your-email" class="form-control" placeholder="Your Email" required>
+                            </div>
+                        </div>
+                        <div class="col-md-6">
+                            <div class="form-group email">
+                                <input type="text" name="your-phone" class="form-control" placeholder="Your Phone" required>
+                            </div>
+                        </div>
+                        <div class="col-md-6">
+                            <div class="form-group email">
+                                <input type="text" name="your-address" class="form-control" placeholder="Your Address" required>
+                            </div>
+                        </div>
+                        <div class="col-md-6">
+                            <div class="form-group email">
+                                <input type="text" name="car-name" class="form-control" placeholder="Your Car" required>
+                            </div>
+                        </div>
+                        <div class="col-md-6">
+                            <div class="form-group email">
+                                <input type="text" name="car-number" class="form-control" placeholder="Car id" required>
+                            </div>
+                        </div>
+                        <div class="col-md-6">
+                            <div class="form-group subject">
+                                <select type="text" name="your-schedule" class="form-control" placeholder="Schedule" required>
+<!--                                  < name="subject" id="subject" required>-->
+                                  <option value="8AM">8AM</option>
+                                  <option value="9AM">9AM</option>
+                                  <option value="10AM">10AM</option>
+                                  <option value="11AM">11AM</option>
+                                  <option value="12AM">12AM</option>
+                                  <option value="1PM">1PM</option>
+                                  <option value="2PM">2PM</option>
+                                  <option value="3PM">3PM</option>
+                                    </select>
+                            </div>
+                        </div>
+                        <div class="col-md-6">
+                            <div class="form-group subject">
+                                <select type="text" name="your-day" class="form-control" placeholder="Day" required>
+<!--                                  < name="subject" id="subject" required>-->
+                                  <option value="Monday">Monday</option>
+                                  <option value="Tuesday">Tuesday</option>
+                                  <option value="Wednesday">Wednesday</option>
+                                  <option value="Thursday">Thursday</option>
+                                  <option value="Friday">Friday</option>
+                                    </select>
+                            </div>
+                        </div>
+                        <div class="col-md-6">
+                            <div class="form-group subject">
+                                <select type="text" name="subject" class="form-control" placeholder="Subject" required>
+<!--                                  < name="subject" id="subject" required>-->
+                                  <option value="support">Free Support</option>
+                                  <option value="superfast">Super Fast</option>
+                                  <option value="repairing">Repairing</option>
+                                  <option value="condition">AIR conditioning</option>
+                                  <option value="oil_change">Oil Change</option>
+                                  <option value="engine_repair">Engine Repair</option>
+                                  <option value="dealership">Dealership</option>
+                                  <option value="security">Security</option>
+                                  <option value="washing">Washing</option>
+                                    </select>
+                            </div>
+                        </div>
+                        <div class="col-md-12">
+                            <div class="form-group message">
+                                <textarea class="form-control" name="your-message" placeholder="Write message"></textarea>
+                            </div>
+                        </div>
+                        <div class="col-md-12">
+                            <div class="send-btn text-center">
+                               <button class="submit button is-primary" id="submitBtn">Book!</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-5">
+                    <div class="contact-info-2">
+                        <div class="ci-box">
+                            <div class="icon">
+                                <i class="flaticon-phone"></i>
+                            </div>
+                            <div class="detail">
+                                <h5>Phone:</h5>
+                                <p><a href="#">0477 8556 552</a></p>
+                            </div>
+                        </div>
+                        <div class="ci-box">
+                            <div class="icon">
+                                <i class="flaticon-mail"></i>
+                            </div>
+                            <div class="detail">
+                                <h5>Email:</h5>
+                                <p><a href="#">info@motormagic.com</a></p>
+                            </div>
+                        </div>
+                        <div class="ci-box">
+                            <div class="icon">
+                                <i class="flaticon-earth"></i>
+                            </div>
+                            <div class="detail">
+                                <h5>Web:</h5>
+                                <p><a href="#">info@motormagic.com</a></p>
+                            </div>
+                        </div>
+                        <div class="ci-box mb-0">
+                            <div class="icon">
+                                <i class="flaticon-fax"></i>
+                            </div>
+                            <div class="detail">
+                                <h5>Fax:</h5>
+                                <p><a href="#">+0477 85X6 552</a></p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </form>
+    </div>
+</div>
+<!-- Contact 2 end -->
+
+
+{% endblock %}

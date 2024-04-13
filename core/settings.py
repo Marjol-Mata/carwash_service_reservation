@@ -43,6 +43,8 @@ INSTALLED_APPS = [
     "django.contrib.humanize",
     "accounts.apps.AccountsConfig",
     "contacts.apps.ContactsConfig",
+    "appointments.apps.AppointmentsConfig",
+    'payments.apps.PaymentsConfig',
 ]
 
 MIDDLEWARE = [
@@ -123,7 +125,6 @@ STATIC_ROOT = os.path.join(BASE_DIR, "static")
 STATICFILES_DIRS = [
     os.path.join(BASE_DIR, "core/static"),
 ]
-
 # Default primary key field type
 # https://docs.djangoproject.com/en/5.0/ref/settings/#default-auto-field
 
@@ -146,3 +147,6 @@ EMAIL_PORT = 587
 EMAIL_HOST_USER = "marjolmata29@gmail.com"
 EMAIL_HOST_PASSWORD = "marr xnpr sudy bzqi"
 EMAIL_USE_TLS = True
+
+STRIPE_PUBLISHABLE_KEY = 'pk_test_51P3EJCIT8NT9a2qmzpu89KWW7Nl69Oy6cmeQNG1v9QJdmvSihC3Bt4cV7QLyveuYBg04kPndsqo48SkAgCZSc7el00UrokTEMx'
+STRIPE_SECRET_KEY = 'sk_test_51P3EJCIT8NT9a2qmlif826hDIxxngiX9qJLA7EupSUJC8QkDnCb0ReJXO3MMdQXjVrC1VYMMr3DcoCZxFYJqYxTc004APa5ADl'
